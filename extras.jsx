@@ -275,7 +275,6 @@ function FooterSection({ lang, logoVariant }) {
     bigQ: '같이 만들어 볼까요?',
     bigSub: '협업, 퍼블리싱, 미디어 문의는 아래로. 보통 영업일 기준 2일 안에 답장 드려요.',
     discord: '디스코드',
-    twitter: '트위터 / X',
     rss: 'RSS 구독',
     cols: [
       { h: '게임', items: ['한양 온라인', 'Gem TD', '캐주얼 신작 (2026)'] },
@@ -288,7 +287,6 @@ function FooterSection({ lang, logoVariant }) {
     bigQ: 'Let\u2019s build something.',
     bigSub: 'Collaboration, publishing, press — drop us a line. Usual response time is 2 business days.',
     discord: 'Discord',
-    twitter: 'Twitter / X',
     rss: 'RSS feed',
     cols: [
       { h: 'Games', items: ['Hanyang Online', 'Gem TD', 'Casual title (2026)'] },
@@ -328,10 +326,6 @@ function FooterSection({ lang, logoVariant }) {
             </a>
             <a className="btn lg" style={{ background: '#5865F2', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #3c47b8', width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
               <span>▸ {t.discord}</span>
-              <span>→</span>
-            </a>
-            <a className="btn lg" style={{ background: '#fff', color: 'var(--hanji-900)', width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
-              <span>▸ {t.twitter}</span>
               <span>→</span>
             </a>
           </div>
