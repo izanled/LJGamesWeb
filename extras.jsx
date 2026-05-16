@@ -278,7 +278,7 @@ function FooterSection({ lang, logoVariant }) {
     rss: 'RSS 구독',
     cols: [
       { h: '게임', items: ['한양 온라인', 'Gem TD', '캐주얼 신작 (2026)'] },
-      { h: '스튜디오', items: ['소개', '개발 일지', '미디어 키트', '채용'] },
+      { h: '스튜디오', items: ['소개', '개발 일지', '미디어 키트'] },
       { h: '연락', items: ['hello@ljgames.com', '디스코드', '트위터 / X', '인스타그램'] },
     ],
     copy: '© 2026 엘제이게임즈. 모든 권리 보유.',
@@ -292,7 +292,7 @@ function FooterSection({ lang, logoVariant }) {
     rss: 'RSS feed',
     cols: [
       { h: 'Games', items: ['Hanyang Online', 'Gem TD', 'Casual title (2026)'] },
-      { h: 'Studio', items: ['About', 'Devlog', 'Press kit', 'Careers'] },
+      { h: 'Studio', items: ['About', 'Devlog', 'Press kit'] },
       { h: 'Contact', items: ['hello@ljgames.com', 'Discord', 'Twitter / X', 'Instagram'] },
     ],
     copy: '© 2026 LJ Games. All rights reserved.',

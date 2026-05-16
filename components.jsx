@@ -14,8 +14,8 @@ function Header({ lang, onLangChange, logoVariant }) {
   }, []);
 
   const navItems = lang === 'KO'
-    ? [['games', '게임'], ['studio', '스튜디오'], ['devlog', '개발 일지'], ['careers', '채용']]
-    : [['games', 'Games'], ['studio', 'Studio'], ['devlog', 'Devlog'], ['careers', 'Careers']];
+    ? [['games', '게임'], ['studio', '스튜디오'], ['devlog', '개발 일지']]
+    : [['games', 'Games'], ['studio', 'Studio'], ['devlog', 'Devlog']];
 
   return (
     <header style={{

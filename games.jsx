@@ -12,7 +12,6 @@ function HanyangShowcase({ lang }) {
     genre: '방치형 RPG',
     status: '오픈 베타',
     cta1: '플레이 스토어',
-    cta2: 'App Store',
     features: [
       ['수만 가지 조합', '검·활·부채·강화·재능까지, 캐릭터는 온전히 당신의 것.'],
       ['사냥 + 방치 성장', '잠시 떠나도 무사는 자란다. 돌아와서 한계를 돌파하라.'],
@@ -27,7 +26,6 @@ function HanyangShowcase({ lang }) {
     genre: 'IDLE RPG',
     status: 'OPEN BETA',
     cta1: 'Play Store',
-    cta2: 'App Store',
     features: [
       ['Tens of thousands of combos', 'Sword, bow, fan, enhancement, talents — your warrior, your way.'],
       ['Active hunt + idle growth', 'Step away and your warrior still grows. Come back to break the ceiling.'],
@@ -102,8 +100,12 @@ function HanyangShowcase({ lang }) {
           </div>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <a className="btn primary lg">▸ {t.cta1}</a>
-            <a className="btn lg" style={{ background: 'var(--hanji-50)', color: 'var(--hanji-900)' }}>▸ {t.cta2}</a>
+            <a
+              className="btn primary lg"
+              href="https://play.google.com/store/apps/details?id=net.nekoland.game112222&hl=ko"
+              target="_blank"
+              rel="noreferrer"
+            >▸ {t.cta1}</a>
           </div>
         </div>
 
@@ -161,11 +163,10 @@ function GemTDShowcase({ lang }) {
     features: [
       ['6종 보석 시스템', '루비·사파이어·에메랄드·토파즈·다이아·아메시스트.'],
       ['보석 진화 / 합성', '레시피로 만드는 전설 보석. 빌드의 정점까지.'],
-      ['도감 173종', '몬스터·특성·스킬까지. 모으는 재미는 덤.'],
+      ['도감 210종', '몬스터·특성·스킬까지. 모으는 재미는 덤.'],
       ['빠른 전투 템포', '한 판은 짧게, 깊이는 깊게. 한 판만 더 하게 되는 그 느낌.'],
     ],
     cta1: '플레이 스토어',
-    cta2: 'App Store',
     gemRow: '여섯 가지 보석',
   } : {
     eyebrow: '◆ NOW PLAYING · Live',
@@ -177,11 +178,10 @@ function GemTDShowcase({ lang }) {
     features: [
       ['Six gem families', 'Ruby, Sapphire, Emerald, Topaz, Diamond, Amethyst.'],
       ['Evolve & combine', 'Recipes for legendary gems. Build to the meta\u2019s peak.'],
-      ['173 codex entries', 'Monsters, traits, skills — collection is half the fun.'],
+      ['210 codex entries', 'Monsters, traits, skills — collection is half the fun.'],
       ['Fast-paced battles', 'Short runs, deep mastery. The one-more-run game.'],
     ],
     cta1: 'Play Store',
-    cta2: 'App Store',
     gemRow: 'Six gem families',
   };
 
@@ -226,7 +226,7 @@ function GemTDShowcase({ lang }) {
             display: 'flex', flexDirection: 'column', gap: 6,
           }}>
             <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 11, letterSpacing: '0.16em', color: 'var(--gem-topaz)', textTransform: 'uppercase' }}>◆ ENDLESS MODE</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: '#fff' }}>173<span style={{ color: 'var(--gem-amethyst)' }}>+</span></div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 24, color: '#fff' }}>210<span style={{ color: 'var(--gem-amethyst)' }}>+</span></div>
             <div style={{ fontFamily: 'var(--font-pixel)', fontSize: 10, color: 'var(--hanji-300)', letterSpacing: '0.08em' }}>{lang === 'KO' ? '도감 엔트리' : 'CODEX ENTRIES'}</div>
           </div>
         </div>
@@ -305,8 +305,13 @@ function GemTDShowcase({ lang }) {
           </div>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <a className="btn lg" style={{ background: 'var(--gem-amethyst)', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #5d3382' }}>▸ {t.cta1}</a>
-            <a className="btn lg" style={{ background: 'var(--hanji-50)', color: 'var(--hanji-900)' }}>▸ {t.cta2}</a>
+            <a
+              className="btn lg"
+              style={{ background: 'var(--gem-amethyst)', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #5d3382' }}
+              href="https://play.google.com/store/apps/details?id=com.gemtowerdefense&hl=ko"
+              target="_blank"
+              rel="noreferrer"
+            >▸ {t.cta1}</a>
           </div>
         </div>
       </div>
@@ -323,7 +328,7 @@ function GemTDStrip({ lang }) {
     { src: 'screenshots/gemtd-battle.jpg',    label: lang === 'KO' ? '빠른 전투' : 'FAST BATTLE' },
     { src: 'screenshots/gemtd-combine.jpg',   label: lang === 'KO' ? '보석 합성' : 'COMBINE' },
     { src: 'screenshots/gemtd-research.jpg',  label: lang === 'KO' ? '보석 연구' : 'RESEARCH' },
-    { src: 'screenshots/gemtd-codex.jpg',     label: lang === 'KO' ? '도감 173' : 'CODEX 173' },
+    { src: 'screenshots/gemtd-codex.jpg',     label: lang === 'KO' ? '도감 210' : 'CODEX 210' },
     { src: 'screenshots/gemtd-legendary.jpg', label: lang === 'KO' ? '전설 보석' : 'LEGENDARY' },
     { src: 'screenshots/gemtd-skill.jpg',     label: lang === 'KO' ? '스킬 빌드' : 'BUILD' },
   ];
