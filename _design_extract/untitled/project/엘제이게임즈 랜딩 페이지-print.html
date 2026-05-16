@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>엘제이게임즈 · LJ Games — Print</title>
+
+<link rel="stylesheet" href="design-system/colors_and_type.css" />
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+  /* ─── Print-friendly overrides ───────────────────────────────── */
+  html, body {
+    background: var(--bg) !important;
+  }
+  /* Sticky header → static for print */
+  header {
+    position: static !important;
+    background: var(--bg) !important;
+    backdrop-filter: none !important;
+    border-bottom: 1px solid var(--border-ink) !important;
+  }
+  /* Disable floating + blink + ticker animations */
+  .float-1, .float-2, .blink, .marquee-track, .caret {
+    animation: none !important;
+  }
+  /* Remove hovers / interactive transforms */
+  .pixel-card { transform: none !important; box-shadow: 4px 4px 0 0 var(--border-ink) !important; }
+  .shot-frame { box-shadow: 4px 4px 0 0 var(--border-ink) !important; }
+  /* Hide the tweaks panel + its toggle */
+  .twk-panel, [class*="twk-"] { display: none !important; }
+  /* Marquee — show but don't scroll */
+  .marquee { overflow: hidden !important; }
+  .marquee-track { animation: none !important; transform: translateX(0) !important; }
+
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+
+    html, body {
+      background: var(--bg) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* Force colors everywhere */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* Compress vertical padding for print */
+    .section {
+      padding: 40px 32px !important;
+    }
+
+    /* Each major section breaks cleanly */
+    section,
+    footer {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Force page breaks before the larger showcases */
+    #games,
+    .game-hero + .game-hero,
+    #studio,
+    #devlog {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    /* Header stays at top, not repeated */
+    header {
+      break-after: avoid;
+    }
+
+    /* Don't split cards or screenshots */
+    .pixel-card,
+    .shot-frame,
+    .phone-frame {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Hide tweaks panel completely in print */
+    .twk-panel, [class*="twk-"] {
+      display: none !important;
+    }
+
+    /* Hyperlinks: keep colored, no URL appended */
+    a {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+
+    /* No need for scanlines that may print muddy */
+    .scanlines::after { display: none !important; }
+
+    /* Smaller fonts on print for hero */
+    h1, h2 {
+      break-after: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="logos.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="games.jsx"></script>
+<script type="text/babel" src="extras.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+<script type="text/babel">
+  // Wait for fonts + React render + a safety delay, then trigger print.
+  (async () => {
+    try {
+      if (document.fonts && document.fonts.ready) {
+        await document.fonts.ready;
+      }
+    } catch (e) {}
+    // Wait until the React root has rendered something
+    const waitForRender = () => new Promise((resolve) => {
+      const check = () => {
+        const root = document.getElementById('root');
+        if (root && root.children.length > 0) resolve();
+        else requestAnimationFrame(check);
+      };
+      check();
+    });
+    await waitForRender();
+    await new Promise(r => setTimeout(r, 800));
+    window.print();
+  })();
+</script>
+</body>
+</html>
