@@ -1,0 +1,23 @@
+# Claude Design 핸드오프 원본 — 로컬 참고용으로 보존, 추적은 하지 않음
+_design_extract/
+
+# screenshots/ 와 100% 중복되는 한국어 파일명 원본 — 로컬 보존, 추적 X
+uploads/
+
+# ECC/Claude Code 훅 자동 생성물
+.plugin-config/
+.complexity-log.md
+**/.complexity-log.md
+.project-structure.md
+**/.project-structure.md
+**/._*-project-structure.md
+
+# OS / IDE 임시 파일
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
