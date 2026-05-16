@@ -269,10 +269,11 @@ window.DevlogSection = DevlogSection;
 // CONTACT BLOCK + FOOTER
 // ────────────────────────────────────────────────────────────────
 function FooterSection({ lang, logoVariant }) {
+  const [comingSoon, setComingSoon] = React.useState(false);
+  const openComingSoon = (e) => { e.preventDefault(); setComingSoon(true); };
   const t = lang === 'KO' ? {
     bigQ: '같이 만들어 볼까요?',
     bigSub: '협업, 퍼블리싱, 미디어 문의는 아래로. 보통 영업일 기준 2일 안에 답장 드려요.',
-    email: 'hello@ljgames.com',
     discord: '디스코드',
     twitter: '트위터 / X',
     rss: 'RSS 구독',
@@ -286,7 +287,6 @@ function FooterSection({ lang, logoVariant }) {
   } : {
     bigQ: 'Let\u2019s build something.',
     bigSub: 'Collaboration, publishing, press — drop us a line. Usual response time is 2 business days.',
-    email: 'hello@ljgames.com',
     discord: 'Discord',
     twitter: 'Twitter / X',
     rss: 'RSS feed',
@@ -322,15 +322,15 @@ function FooterSection({ lang, logoVariant }) {
             <p style={{ fontFamily: 'var(--font-ui)', fontSize: 17, lineHeight: 1.6, color: '#ffe6e2', maxWidth: 540, margin: 0 }}>{t.bigSub}</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <a className="btn ink lg" style={{ width: '100%', justifyContent: 'space-between' }} href={`mailto:${t.email}`}>
-              <span>▸ {t.email}</span>
+            <a className="btn ink lg" style={{ width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
+              <span>▸ E-mail</span>
               <span style={{ color: 'var(--gem-topaz)' }}>→</span>
             </a>
-            <a className="btn lg" style={{ background: '#5865F2', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #3c47b8', width: '100%', justifyContent: 'space-between' }}>
+            <a className="btn lg" style={{ background: '#5865F2', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #3c47b8', width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
               <span>▸ {t.discord}</span>
               <span>→</span>
             </a>
-            <a className="btn lg" style={{ background: '#fff', color: 'var(--hanji-900)', width: '100%', justifyContent: 'space-between' }}>
+            <a className="btn lg" style={{ background: '#fff', color: 'var(--hanji-900)', width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
               <span>▸ {t.twitter}</span>
               <span>→</span>
             </a>
@@ -362,6 +362,50 @@ function FooterSection({ lang, logoVariant }) {
           <span>v1.0 · {lang === 'KO' ? '엘제이게임즈 홈페이지' : 'ljgames.com'}</span>
         </div>
       </footer>
+
+      {comingSoon && (
+        <div
+          onClick={() => setComingSoon(false)}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 100,
+            background: 'rgba(20, 16, 10, 0.7)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: 24,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="pixel-card"
+            style={{
+              background: 'var(--bg)',
+              color: 'var(--fg)',
+              padding: 32,
+              maxWidth: 420,
+              width: '100%',
+              display: 'flex', flexDirection: 'column', gap: 16,
+            }}
+          >
+            <div className="kicker" style={{ color: 'var(--dc-red)' }}>◆ {lang === 'KO' ? '안내' : 'NOTICE'}</div>
+            <h3 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 28,
+              lineHeight: 1.15,
+              margin: 0,
+              color: 'var(--fg)',
+            }}>{lang === 'KO' ? '준비중입니다' : 'Coming soon'}</h3>
+            <p style={{ fontFamily: 'var(--font-ui)', fontSize: 14, lineHeight: 1.6, color: 'var(--fg-muted)', margin: 0 }}>
+              {lang === 'KO'
+                ? '해당 채널은 아직 준비 중이에요. 곧 열어드릴게요.'
+                : 'This channel isn’t ready yet. We’ll open it soon.'}
+            </p>
+            <button
+              onClick={() => setComingSoon(false)}
+              className="btn primary"
+              style={{ alignSelf: 'flex-end' }}
+            >{lang === 'KO' ? '확인' : 'OK'}</button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
