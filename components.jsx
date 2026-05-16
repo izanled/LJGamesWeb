@@ -121,12 +121,13 @@ function Hero({ lang }) {
           <div className="kicker" style={{ color: 'var(--accent)', marginBottom: 20 }}>◆ {t.kicker}</div>
           <h1 style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(40px, 5.6vw, 80px)',
+            fontSize: 'clamp(36px, 5vw, 56px)',
             lineHeight: 1.04,
             letterSpacing: '-0.01em',
             margin: 0,
             color: 'var(--fg)',
             textWrap: 'balance',
+            whiteSpace: 'nowrap',
           }}>
             {t.headline[0]}<br/>
             <span style={{ color: 'var(--dc-red-deep)' }}>{t.headline[1]}</span>
