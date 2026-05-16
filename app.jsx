@@ -3,7 +3,7 @@
 function App() {
   const defaults = /*EDITMODE-BEGIN*/{
     "lang": "KO",
-    "logoVariant": "gem",
+    "logoVariant": "mascot",
     "accent": "#c8443a",
     "theme": "light"
   }/*EDITMODE-END*/;
