@@ -18,7 +18,7 @@ function Header({ lang, onLangChange, logoVariant }) {
     : [['games', 'Games'], ['studio', 'Studio'], ['devlog', 'Devlog']];
 
   return (
-    <header style={{
+    <header className="lj-header" style={{
       position: 'sticky',
       top: 0,
       zIndex: 50,
@@ -35,7 +35,7 @@ function Header({ lang, onLangChange, logoVariant }) {
       <a href="#top" style={{ display: 'inline-flex', alignItems: 'center' }}>
         <Logo variant={logoVariant} size={36} />
       </a>
-      <nav style={{ display: 'flex', gap: 4, marginLeft: 8 }}>
+      <nav className="lj-nav" style={{ display: 'flex', gap: 4, marginLeft: 8 }}>
         {navItems.map(([k, label]) => (
           <a key={k} href={'#' + k} style={{
             fontFamily: 'var(--font-pixel)',
@@ -53,7 +53,7 @@ function Header({ lang, onLangChange, logoVariant }) {
           >{label}</a>
         ))}
       </nav>
-      <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div className="lj-header-actions" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
         <button
           onClick={() => onLangChange(lang === 'KO' ? 'EN' : 'KO')}
           className="btn sm ghost"
@@ -107,10 +107,10 @@ function Hero({ lang }) {
   };
 
   return (
-    <section id="top" ref={wrapRef} className="section hanji-bg" style={{
+    <section id="top" ref={wrapRef} className="section hanji-bg hero-section" style={{
       paddingTop: 64, paddingBottom: 80, position: 'relative', overflow: 'hidden',
     }}>
-      <div className="container" style={{
+      <div className="container hero-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.05fr) minmax(0, 1fr)',
         gap: 56,
@@ -119,9 +119,9 @@ function Hero({ lang }) {
         {/* LEFT */}
         <div>
           <div className="kicker" style={{ color: 'var(--accent)', marginBottom: 20 }}>◆ {t.kicker}</div>
-          <h1 style={{
+          <h1 className="hero-headline" style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(36px, 5vw, 56px)',
+            fontSize: 'clamp(32px, 5vw, 56px)',
             lineHeight: 1.04,
             letterSpacing: '-0.01em',
             margin: 0,
@@ -153,7 +153,7 @@ function Hero({ lang }) {
         </div>
 
         {/* RIGHT — stacked screenshot collage */}
-        <div style={{ position: 'relative', height: 540, perspective: 1200 }}>
+        <div className="hero-art" style={{ position: 'relative', height: 540, perspective: 1200 }}>
           <HeroCollage tilt={tilt} lang={lang} />
         </div>
       </div>
@@ -172,7 +172,7 @@ function HeroCollage({ tilt, lang }) {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       {/* Back frame — Hanyang scene wide */}
-      <div className="float-2" style={{
+      <div className="float-2 hero-collage-back" style={{
         position: 'absolute', left: 0, top: 24, width: '78%', aspectRatio: '16/9',
         ...base(0.6),
       }}>
@@ -189,7 +189,7 @@ function HeroCollage({ tilt, lang }) {
       </div>
 
       {/* Middle frame — Gem TD cover */}
-      <div className="float-1" style={{
+      <div className="float-1 hero-collage-middle" style={{
         position: 'absolute', right: 0, top: 180, width: '70%', aspectRatio: '16/9',
         ...base(0.9),
       }}>
@@ -203,7 +203,7 @@ function HeroCollage({ tilt, lang }) {
       </div>
 
       {/* Front-right tiny phone frame — Gem TD vertical screen */}
-      <div className="float-2" style={{
+      <div className="float-2 hero-collage-phone" style={{
         position: 'absolute', right: 24, top: -10,
         ...base(1.3),
       }}>
@@ -213,7 +213,7 @@ function HeroCollage({ tilt, lang }) {
       </div>
 
       {/* Hanyang detail — bottom left small */}
-      <div className="float-1" style={{
+      <div className="float-1 hero-collage-detail" style={{
         position: 'absolute', left: -18, bottom: 0, width: 200, aspectRatio: '16/9',
         ...base(1.2),
       }}>
@@ -301,7 +301,7 @@ function StatsStrip({ lang }) {
   ];
   return (
     <section className="section" style={{ paddingTop: 56, paddingBottom: 56, borderBottom: '1px solid var(--border)' }}>
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+      <div className="container stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
         {stats.map(s => (
           <div key={s.label} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div className="stat-num">{s.num}</div>

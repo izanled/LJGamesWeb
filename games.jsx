@@ -37,11 +37,11 @@ function HanyangShowcase({ lang }) {
   return (
     <section id="games" className="game-hero" style={{ background: '#1a1410', color: '#fdf8ec' }}>
       {/* Section eyebrow */}
-      <div className="container" style={{ padding: '64px 48px 0' }}>
+      <div className="container hanyang-eyebrow" style={{ padding: '64px 48px 0' }}>
         <div className="kicker" style={{ color: 'var(--gem-topaz)' }}>{t.eyebrow}</div>
       </div>
 
-      <div className="container" style={{
+      <div className="container hanyang-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.1fr)',
         gap: 64,
@@ -80,7 +80,7 @@ function HanyangShowcase({ lang }) {
           }}>{t.tagline}</p>
 
           {/* Feature grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
+          <div className="hanyang-features" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
             {t.features.map(([title, body], i) => (
               <div key={i} style={{
                 background: 'rgba(255,255,255,0.04)',
@@ -122,7 +122,7 @@ window.HanyangShowcase = HanyangShowcase;
 
 function HanyangMosaic() {
   return (
-    <div style={{
+    <div className="hanyang-mosaic" style={{
       display: 'grid',
       gridTemplateColumns: '1.4fr 1fr',
       gridTemplateRows: 'repeat(3, 110px)',
@@ -200,11 +200,11 @@ function GemTDShowcase({ lang }) {
       color: '#fdf8ec',
       borderTop: 'none',
     }}>
-      <div className="container" style={{ padding: '64px 48px 0' }}>
+      <div className="container gemtd-eyebrow" style={{ padding: '64px 48px 0' }}>
         <div className="kicker" style={{ color: 'var(--gem-amethyst)' }}>{t.eyebrow}</div>
       </div>
 
-      <div className="container" style={{
+      <div className="container gemtd-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.1fr) minmax(0, 1fr)',
         gap: 56,
@@ -217,7 +217,7 @@ function GemTDShowcase({ lang }) {
             <img src="screenshots/gemtd-cover.jpg" alt="Gem TD cover"/>
           </div>
           {/* Gem stat overlay */}
-          <div style={{
+          <div className="gemtd-stat-overlay" style={{
             position: 'absolute', right: -20, bottom: -20,
             background: '#15110a',
             border: '1px solid var(--gem-amethyst)',
@@ -291,7 +291,7 @@ function GemTDShowcase({ lang }) {
           </div>
 
           {/* Features compact */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
+          <div className="gemtd-features" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
             {t.features.map(([title, body], i) => (
               <div key={i} style={{
                 padding: 14,
@@ -333,8 +333,8 @@ function GemTDStrip({ lang }) {
     { src: 'screenshots/gemtd-skill.jpg',     label: lang === 'KO' ? '스킬 빌드' : 'BUILD' },
   ];
   return (
-    <div className="container" style={{ padding: '0 48px 64px' }}>
-      <div style={{
+    <div className="container gemtd-strip" style={{ padding: '0 48px 64px' }}>
+      <div className="gemtd-strip-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(6, 1fr)',
         gap: 12,

@@ -21,8 +21,14 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   padding: 96px 48px;
 }
+@media (max-width: 960px) {
+  .section { padding: 72px 32px; }
+}
 @media (max-width: 720px) {
-  .section { padding: 64px 24px; }
+  .section { padding: 56px 18px; }
+}
+@media (max-width: 420px) {
+  .section { padding: 44px 14px; }
 }
 
 .container {
@@ -297,4 +303,226 @@ a { color: inherit; text-decoration: none; }
   background: var(--gem-color, var(--dc-red));
   border: 1px solid var(--border-ink);
   display: inline-block;
+}
+
+/* ============================================================
+   Mobile responsive overrides
+   Targets containers carrying inline grid/flex styles in JSX.
+   `!important` is required because React inline styles win otherwise.
+   Breakpoints:
+     960px — tablet (2-col → 1-col where the layout demands it)
+     720px — phone
+     420px — small phone
+   ============================================================ */
+
+/* HEADER */
+@media (max-width: 720px) {
+  .lj-header { padding: 0 16px !important; gap: 10px !important; }
+  .lj-nav { display: none !important; }
+  .lj-header-actions { gap: 8px !important; }
+}
+@media (max-width: 420px) {
+  .lj-header-actions .btn.sm { padding: 6px 10px !important; font-size: 10px !important; }
+}
+
+/* HERO */
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .hero-art { height: 360px !important; }
+}
+@media (max-width: 720px) {
+  .hero-section { padding-top: 32px !important; padding-bottom: 48px !important; }
+  .hero-headline { white-space: normal !important; }
+  .hero-art { height: 280px !important; }
+}
+.hero-headline { /* always allow wrapping below the inline nowrap */ }
+@media (max-width: 960px) {
+  .hero-headline { white-space: normal !important; }
+}
+
+/* HERO COLLAGE — simplify on phone, hide secondary pieces */
+@media (max-width: 720px) {
+  .hero-collage-back { width: 96% !important; left: 0 !important; top: 8px !important; }
+  .hero-collage-middle { width: 80% !important; top: auto !important; bottom: 0 !important; right: 0 !important; }
+  .hero-collage-phone { display: none !important; }
+  .hero-collage-detail { display: none !important; }
+}
+
+/* STATS STRIP */
+@media (max-width: 720px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .stat-num { font-size: 40px !important; }
+}
+
+/* HANYANG SHOWCASE */
+@media (max-width: 960px) {
+  .hanyang-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    padding: 32px 32px 64px !important;
+  }
+  .hanyang-eyebrow { padding: 56px 32px 0 !important; }
+}
+@media (max-width: 720px) {
+  .hanyang-grid {
+    padding: 28px 18px 56px !important;
+    gap: 28px !important;
+  }
+  .hanyang-eyebrow { padding: 48px 18px 0 !important; }
+  .hanyang-features {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+/* HANYANG MOSAIC — replace 110px row heights with aspect ratios */
+@media (max-width: 720px) {
+  .hanyang-mosaic {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 10px !important;
+  }
+  .hanyang-mosaic > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    aspect-ratio: 16 / 10;
+  }
+  .hanyang-mosaic > *:first-child {
+    grid-column: 1 / span 2 !important;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* GEM TD SHOWCASE */
+@media (max-width: 960px) {
+  .gemtd-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 24px 32px 56px !important;
+  }
+  .gemtd-eyebrow { padding: 56px 32px 0 !important; }
+}
+@media (max-width: 720px) {
+  .gemtd-grid {
+    padding: 20px 18px 48px !important;
+    gap: 32px !important;
+  }
+  .gemtd-eyebrow { padding: 48px 18px 0 !important; }
+  .gemtd-features {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .gemtd-stat-overlay {
+    right: -8px !important;
+    bottom: -12px !important;
+    padding: 10px 12px !important;
+  }
+}
+
+/* GEM TD STRIP — 6-col is unreadable on phone */
+@media (max-width: 960px) {
+  .gemtd-strip {
+    padding: 0 32px 56px !important;
+  }
+  .gemtd-strip-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 720px) {
+  .gemtd-strip {
+    padding: 0 18px 48px !important;
+  }
+  .gemtd-strip-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+}
+@media (max-width: 420px) {
+  .gemtd-strip-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* COMING NEXT */
+@media (max-width: 960px) {
+  .coming-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ABOUT */
+@media (max-width: 960px) {
+  .about-pillars {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* DEVLOG */
+@media (max-width: 960px) {
+  .devlog-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 720px) {
+  .devlog-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+/* CONTACT CTA */
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+/* FOOTER */
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 24px !important;
+    padding: 56px 32px 24px !important;
+  }
+  .footer-grid > *:first-child {
+    grid-column: 1 / -1 !important;
+  }
+}
+@media (max-width: 720px) {
+  .footer-grid {
+    padding: 44px 18px 20px !important;
+  }
+  .footer-meta {
+    padding: 16px 18px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* MARQUEE */
+@media (max-width: 720px) {
+  .marquee-track {
+    padding: 12px 16px !important;
+    font-size: 11px !important;
+    gap: 28px !important;
+  }
+}
+
+/* TWEAKS PANEL — hide the floating dev panel on mobile.
+   It's positioned fixed at 280px wide and obscures content on small screens. */
+@media (max-width: 720px) {
+  .twk-panel { display: none !important; }
 }

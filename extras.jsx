@@ -22,7 +22,7 @@ function ComingNext({ lang }) {
 
   return (
     <section className="section hanji-bg" style={{ borderBottom: '1px solid var(--border)' }}>
-      <div className="container" style={{
+      <div className="container coming-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 0.9fr)',
         gap: 48,
@@ -168,7 +168,7 @@ function AboutSection({ lang }) {
         }}>{t.body}</p>
 
         {/* Pillars */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className="about-pillars" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {t.pillars.map((p, i) => (
             <div key={i} style={{
               padding: 28,
@@ -233,7 +233,7 @@ function DevlogSection({ lang }) {
   return (
     <section id="devlog" className="section" style={{ borderBottom: '1px solid var(--border)' }}>
       <div className="container">
-        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 32 }}>
+        <div className="devlog-header" style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 32 }}>
           <div>
             <div className="kicker" style={{ color: 'var(--accent)' }}>{t.eyebrow}</div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 36, margin: '12px 0 0', color: 'var(--fg)' }}>{t.title}</h2>
@@ -241,7 +241,7 @@ function DevlogSection({ lang }) {
           <a className="kicker" style={{ color: 'var(--link)', cursor: 'pointer' }}>{t.all}</a>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+        <div className="devlog-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {t.posts.map((p, i) => (
             <a key={i} className="pixel-card" style={{
               padding: 24,
@@ -301,7 +301,7 @@ function FooterSection({ lang, logoVariant }) {
     <>
       {/* Contact CTA */}
       <section className="section" style={{ background: 'var(--dc-red)', color: '#fff' }}>
-        <div className="container" style={{
+        <div className="container contact-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)',
           gap: 48,
@@ -335,7 +335,7 @@ function FooterSection({ lang, logoVariant }) {
       {/* Footer proper */}
       <footer style={{ background: 'var(--hanji-900)', color: 'var(--hanji-50)', borderTop: '1px solid var(--border-ink)' }}>
         <div className="dancheong-divider"/>
-        <div className="container" style={{ padding: '64px 48px 24px', display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: 40 }}>
+        <div className="container footer-grid" style={{ padding: '64px 48px 24px', display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: 40 }}>
           <div>
             <Logo variant={logoVariant} size={44} color="var(--hanji-50)" subtle="var(--hanji-300)" />
             <p style={{ fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--hanji-300)', lineHeight: 1.6, marginTop: 18, maxWidth: 280 }}>{t.sub}</p>
@@ -351,7 +351,7 @@ function FooterSection({ lang, logoVariant }) {
             </div>
           ))}
         </div>
-        <div style={{ padding: '20px 48px', borderTop: '1px solid #2a2316', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--hanji-400)' }}>
+        <div className="footer-meta" style={{ padding: '20px 48px', borderTop: '1px solid #2a2316', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--hanji-400)' }}>
           <span>{t.copy}</span>
           <span>v1.0 · {lang === 'KO' ? '엘제이게임즈 홈페이지' : 'ljgames.com'}</span>
         </div>
