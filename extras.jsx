@@ -271,6 +271,7 @@ window.DevlogSection = DevlogSection;
 function FooterSection({ lang, logoVariant }) {
   const [comingSoon, setComingSoon] = React.useState(false);
   const openComingSoon = (e) => { e.preventDefault(); setComingSoon(true); };
+  const discordUrl = 'https://discord.com/invite/7ua6Vccs';
   const t = lang === 'KO' ? {
     bigQ: '같이 만들어 볼까요?',
     bigSub: '협업, 퍼블리싱, 미디어 문의는 아래로. 보통 영업일 기준 2일 안에 답장 드려요.',
@@ -324,7 +325,7 @@ function FooterSection({ lang, logoVariant }) {
               <span>▸ E-mail</span>
               <span style={{ color: 'var(--gem-topaz)' }}>→</span>
             </a>
-            <a className="btn lg" style={{ background: '#5865F2', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #3c47b8', width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
+            <a className="btn lg" style={{ background: '#5865F2', color: '#fff', boxShadow: 'inset 0 -3px 0 0 #3c47b8', width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href={discordUrl} target="_blank" rel="noreferrer">
               <span>▸ {t.discord}</span>
               <span>→</span>
             </a>
@@ -344,9 +345,19 @@ function FooterSection({ lang, logoVariant }) {
             <div key={c.h}>
               <h4 style={{ fontFamily: 'var(--font-pixel)', fontSize: 11, letterSpacing: '0.16em', color: 'var(--gem-topaz)', textTransform: 'uppercase', margin: '4px 0 16px' }}>◇ {c.h}</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {c.items.map(it => (
-                  <li key={it}><a style={{ fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--hanji-200)', cursor: 'pointer' }}>{it}</a></li>
-                ))}
+                {c.items.map(it => {
+                  const isDiscord = it === t.discord;
+                  return (
+                    <li key={it}>
+                      <a
+                        href={isDiscord ? discordUrl : undefined}
+                        target={isDiscord ? '_blank' : undefined}
+                        rel={isDiscord ? 'noreferrer' : undefined}
+                        style={{ fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--hanji-200)', cursor: 'pointer' }}
+                      >{it}</a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
