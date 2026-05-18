@@ -42,7 +42,6 @@ function App() {
       <GemTDShowcase lang={lang} />
       <ComingNext lang={lang} />
       <AboutSection lang={lang} />
-      <DevlogSection lang={lang} />
       <FooterSection lang={lang} logoVariant={t.logoVariant} />
 
       <TweaksPanel title="Tweaks">

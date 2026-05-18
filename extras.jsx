@@ -8,14 +8,12 @@ function ComingNext({ lang }) {
     eyebrow: '◆ COMING NEXT',
     title: '캐주얼 신작 · 작업 중',
     sub: '한 손으로 즐기는 짧고 깊은 픽셀 게임. 누구나 1분 안에 빠져들고, 한 달 후에도 돌아오게 만드는 그 느낌을 찾고 있어요.',
-    cta: '소식 받아보기',
     placeholder: '비밀 작업실',
     tags: ['픽셀 아트', '한 손 조작', '짧고 깊게', '2026 출시'],
   } : {
     eyebrow: '◆ COMING NEXT',
     title: 'New casual title · in development',
     sub: 'A short-but-deep pixel game you can play one-handed. The kind that pulls you in within a minute — and pulls you back a month later.',
-    cta: 'Get updates',
     placeholder: 'Secret workshop',
     tags: ['Pixel art', 'One-hand play', 'Short & deep', '2026 release'],
   };
@@ -44,7 +42,6 @@ function ComingNext({ lang }) {
               <span key={i} className="tag">◇ {tag}</span>
             ))}
           </div>
-          <a className="btn gem lg">▸ {t.cta}</a>
         </div>
 
         {/* Placeholder mock — pixel "in-progress" frame */}
@@ -269,8 +266,9 @@ window.DevlogSection = DevlogSection;
 // CONTACT BLOCK + FOOTER
 // ────────────────────────────────────────────────────────────────
 function FooterSection({ lang, logoVariant }) {
-  const [comingSoon, setComingSoon] = React.useState(false);
-  const openComingSoon = (e) => { e.preventDefault(); setComingSoon(true); };
+  const hanyangPlayUrl = 'https://play.google.com/store/apps/details?id=net.nekoland.game112222&hl=ko';
+  const gemTdPlayUrl = 'https://play.google.com/store/apps/details?id=com.gemtowerdefense&hl=ko';
+  const emailUrl = 'mailto:pungsog.games@gmail.com';
   const discordUrl = 'https://discord.com/invite/7ua6Vccs';
   const t = lang === 'KO' ? {
     bigQ: '같이 만들어 볼까요?',
@@ -278,9 +276,17 @@ function FooterSection({ lang, logoVariant }) {
     discord: '디스코드',
     rss: 'RSS 구독',
     cols: [
-      { h: '게임', items: ['한양 온라인', 'Gem TD', '캐주얼 신작 (2026)'] },
-      { h: '스튜디오', items: ['소개', '개발 일지', '미디어 키트'] },
-      { h: '연락', items: ['E-mail', '디스코드'] },
+      { h: '게임', items: [
+        { label: '한양 온라인', href: hanyangPlayUrl, external: true },
+        { label: 'Gem TD', href: gemTdPlayUrl, external: true },
+      ] },
+      { h: '스튜디오', items: [
+        { label: '소개', href: '#studio' },
+      ] },
+      { h: '연락', items: [
+        { label: 'E-mail', href: emailUrl },
+        { label: '디스코드', href: discordUrl, external: true },
+      ] },
     ],
     copy: '© 2026 엘제이게임즈. 모든 권리 보유.',
     sub: '정성껏 다듬은 픽셀 게임을 만듭니다.',
@@ -290,9 +296,17 @@ function FooterSection({ lang, logoVariant }) {
     discord: 'Discord',
     rss: 'RSS feed',
     cols: [
-      { h: 'Games', items: ['Hanyang Online', 'Gem TD', 'Casual title (2026)'] },
-      { h: 'Studio', items: ['About', 'Devlog', 'Press kit'] },
-      { h: 'Contact', items: ['E-mail', 'Discord'] },
+      { h: 'Games', items: [
+        { label: 'Hanyang Online', href: hanyangPlayUrl, external: true },
+        { label: 'Gem TD', href: gemTdPlayUrl, external: true },
+      ] },
+      { h: 'Studio', items: [
+        { label: 'About', href: '#studio' },
+      ] },
+      { h: 'Contact', items: [
+        { label: 'E-mail', href: emailUrl },
+        { label: 'Discord', href: discordUrl, external: true },
+      ] },
     ],
     copy: '© 2026 LJ Games. All rights reserved.',
     sub: 'Carefully crafted pixel games.',
@@ -321,7 +335,7 @@ function FooterSection({ lang, logoVariant }) {
             <p style={{ fontFamily: 'var(--font-ui)', fontSize: 17, lineHeight: 1.6, color: '#ffe6e2', maxWidth: 540, margin: 0 }}>{t.bigSub}</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <a className="btn ink lg" style={{ width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href="#" onClick={openComingSoon}>
+            <a className="btn ink lg" style={{ width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} href={emailUrl}>
               <span>▸ E-mail</span>
               <span style={{ color: 'var(--gem-topaz)' }}>→</span>
             </a>
@@ -345,19 +359,16 @@ function FooterSection({ lang, logoVariant }) {
             <div key={c.h}>
               <h4 style={{ fontFamily: 'var(--font-pixel)', fontSize: 11, letterSpacing: '0.16em', color: 'var(--gem-topaz)', textTransform: 'uppercase', margin: '4px 0 16px' }}>◇ {c.h}</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {c.items.map(it => {
-                  const isDiscord = it === t.discord;
-                  return (
-                    <li key={it}>
-                      <a
-                        href={isDiscord ? discordUrl : undefined}
-                        target={isDiscord ? '_blank' : undefined}
-                        rel={isDiscord ? 'noreferrer' : undefined}
-                        style={{ fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--hanji-200)', cursor: 'pointer' }}
-                      >{it}</a>
-                    </li>
-                  );
-                })}
+                {c.items.map(it => (
+                  <li key={it.label}>
+                    <a
+                      href={it.href}
+                      target={it.external ? '_blank' : undefined}
+                      rel={it.external ? 'noreferrer' : undefined}
+                      style={{ fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--hanji-200)', cursor: 'pointer' }}
+                    >{it.label}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
@@ -368,49 +379,6 @@ function FooterSection({ lang, logoVariant }) {
         </div>
       </footer>
 
-      {comingSoon && (
-        <div
-          onClick={() => setComingSoon(false)}
-          style={{
-            position: 'fixed', inset: 0, zIndex: 100,
-            background: 'rgba(20, 16, 10, 0.7)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: 24,
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="pixel-card"
-            style={{
-              background: 'var(--bg)',
-              color: 'var(--fg)',
-              padding: 32,
-              maxWidth: 420,
-              width: '100%',
-              display: 'flex', flexDirection: 'column', gap: 16,
-            }}
-          >
-            <div className="kicker" style={{ color: 'var(--dc-red)' }}>◆ {lang === 'KO' ? '안내' : 'NOTICE'}</div>
-            <h3 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 28,
-              lineHeight: 1.15,
-              margin: 0,
-              color: 'var(--fg)',
-            }}>{lang === 'KO' ? '준비중입니다' : 'Coming soon'}</h3>
-            <p style={{ fontFamily: 'var(--font-ui)', fontSize: 14, lineHeight: 1.6, color: 'var(--fg-muted)', margin: 0 }}>
-              {lang === 'KO'
-                ? '해당 채널은 아직 준비 중이에요. 곧 열어드릴게요.'
-                : 'This channel isn’t ready yet. We’ll open it soon.'}
-            </p>
-            <button
-              onClick={() => setComingSoon(false)}
-              className="btn primary"
-              style={{ alignSelf: 'flex-end' }}
-            >{lang === 'KO' ? '확인' : 'OK'}</button>
-          </div>
-        </div>
-      )}
     </>
   );
 }

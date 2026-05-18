@@ -14,8 +14,8 @@ function Header({ lang, onLangChange, logoVariant }) {
   }, []);
 
   const navItems = lang === 'KO'
-    ? [['games', '게임'], ['studio', '스튜디오'], ['devlog', '개발 일지']]
-    : [['games', 'Games'], ['studio', 'Studio'], ['devlog', 'Devlog']];
+    ? [['games', '게임'], ['studio', '스튜디오']]
+    : [['games', 'Games'], ['studio', 'Studio']];
 
   return (
     <header className="lj-header" style={{
