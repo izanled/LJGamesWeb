@@ -101,51 +101,19 @@ window.LogoGemMark = LogoGemMark;
 /* -------- Variant B: Pixel mascot — small warrior with gat -------- */
 function LogoMascot({ size = 40 }) {
   return (
-    <svg viewBox="0 0 32 32" width={size} height={size} shapeRendering="crispEdges" style={{ imageRendering: 'pixelated', display: 'block' }}>
-      {/* gat (Korean traditional hat) — flat brim + dome */}
-      <g fill="#15110a">
-        <rect x="6" y="6" width="20" height="1"/>
-        <rect x="4" y="7" width="24" height="2"/>
-        <rect x="10" y="3" width="12" height="3"/>
-        <rect x="8"  y="4" width="2" height="2"/>
-        <rect x="22" y="4" width="2" height="2"/>
-      </g>
-      {/* hat shine */}
-      <rect x="12" y="4" width="3" height="1" fill="#5c4e30"/>
-      {/* head — paper tone */}
-      <g fill="#f1e7d0">
-        <rect x="10" y="9" width="12" height="6"/>
-        <rect x="11" y="15" width="10" height="1"/>
-      </g>
-      {/* hair side */}
-      <rect x="10" y="9" width="2" height="3" fill="#221d12"/>
-      <rect x="20" y="9" width="2" height="3" fill="#221d12"/>
-      {/* eyes */}
-      <rect x="13" y="11" width="2" height="2" fill="#15110a"/>
-      <rect x="17" y="11" width="2" height="2" fill="#15110a"/>
-      {/* mouth */}
-      <rect x="15" y="14" width="2" height="1" fill="#962e24"/>
-      {/* shoulders / hanbok body — red */}
-      <g fill="#c8443a">
-        <rect x="8"  y="16" width="16" height="8"/>
-        <rect x="6"  y="17" width="2"  height="6"/>
-        <rect x="24" y="17" width="2"  height="6"/>
-      </g>
-      {/* hanbok trim — blue */}
-      <rect x="8" y="16" width="16" height="1" fill="#2e5a8c"/>
-      <rect x="15" y="17" width="2" height="7" fill="#1a1410"/>
-      <rect x="8" y="23" width="16" height="1" fill="#962e24"/>
-      {/* sword hilt at side */}
-      <g fill="#e2a83a">
-        <rect x="25" y="14" width="1" height="6"/>
-      </g>
-      <rect x="24" y="14" width="3" height="1" fill="#15110a"/>
-      {/* legs - tiny */}
-      <rect x="11" y="24" width="3" height="3" fill="#15110a"/>
-      <rect x="18" y="24" width="3" height="3" fill="#15110a"/>
-      {/* shadow */}
-      <rect x="9" y="27" width="14" height="1" fill="#15110a" opacity="0.4"/>
-    </svg>
+    <img
+      src="design-system/assets/icon.png"
+      alt=""
+      width={size}
+      height={size}
+      style={{
+        width: size,
+        height: size,
+        display: 'block',
+        objectFit: 'contain',
+        imageRendering: 'pixelated',
+      }}
+    />
   );
 }
 window.LogoMascot = LogoMascot;
