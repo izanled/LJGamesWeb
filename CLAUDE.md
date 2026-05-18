@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project origin
 
-This repo is the implemented copy of a **Claude Design (claude.ai/design)** handoff bundle for "엘제이게임즈 (LJ Games)" — a 1-인 인디 게임 스튜디오 랜딩 페이지. The original bundle, its README, and the full chat transcript that captured user intent are preserved at `_design_extract/untitled/` and should be consulted when interpreting design ambiguity. The page targets two shipped games (**한양 온라인** — idle RPG, **Gem TD** — tower defense) plus a casual title in development.
+This repo is the implemented copy of a **Claude Design (claude.ai/design)** handoff bundle for "엘제이게임즈 (LJ Games)" — an indie game studio landing page. The original bundle, its README, and the full chat transcript that captured user intent are preserved at `_design_extract/untitled/` and should be consulted when interpreting design ambiguity. The page targets two shipped games (**한양 온라인** — idle RPG, **Gem TD** — tower defense) plus a casual title in development.
 
 ## Run / preview
 

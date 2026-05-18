@@ -87,7 +87,7 @@ function Hero({ lang }) {
   }, []);
 
   const t = lang === 'KO' ? {
-    kicker: '엘제이게임즈 · 1인 인디 스튜디오',
+    kicker: '엘제이게임즈 · 인디 게임 스튜디오',
     headline: ['픽셀로 그린 세계,', '오래 머무는 즐거움.'],
     sub: '방치형 RPG부터 타워 디펜스, 그리고 곧 시작될 캐주얼 게임까지. 시간을 존중하는 한 땀 한 땀 다듬은 게임을 만듭니다.',
     primary: '게임 둘러보기',
@@ -96,7 +96,7 @@ function Hero({ lang }) {
     chip2: 'Gem TD · 서비스 중',
     chip3: '캐주얼 신작 · 2026 예정',
   } : {
-    kicker: 'LJ GAMES · Solo indie studio',
+    kicker: 'LJ GAMES · Indie game studio',
     headline: ['Pixel-crafted worlds,', 'made to be lived in.'],
     sub: 'From idle RPGs to tower defense, with a casual title up next. Hand-tuned games that respect the player\u2019s time — built one pixel at a time.',
     primary: 'See our games',
@@ -254,21 +254,21 @@ window.Sparkles = Sparkles;
 // ────────────────────────────────────────────────────────────────
 function Marquee({ lang }) {
   const items = lang === 'KO' ? [
-    '◆ 1인 인디 스튜디오',
+    '◆ 인디 게임 스튜디오',
     '한 땀 한 땀 다듬은 픽셀 아트',
     '플레이어의 시간을 존중하는 게임',
     '한양 온라인 · 오픈 베타 진행 중',
     'Gem TD · 서비스 중',
     '캐주얼 신작 · 2026 예정',
-    'Made in Seoul',
+    '정성껏 다듬은 게임',
   ] : [
-    '◆ Solo indie studio',
+    '◆ Indie game studio',
     'Hand-tuned pixel art',
     'Games that respect the player\u2019s time',
     'Hanyang Online · Open beta',
     'Gem TD · Live',
     'Casual title coming 2026',
-    'Made in Seoul',
+    'Carefully crafted games',
   ];
   // duplicate for seamless loop
   const doubled = [...items, ...items, ...items];
@@ -291,13 +291,13 @@ function StatsStrip({ lang }) {
   const stats = lang === 'KO' ? [
     { num: '2', label: '출시작' },
     { num: '1', label: '개발 중' },
-    { num: '2024', label: '설립' },
-    { num: 'SEOUL', label: '본사' },
+    { num: '2026', label: '설립' },
+    { num: 'PIXEL', label: '스타일' },
   ] : [
     { num: '2', label: 'Shipped' },
     { num: '1', label: 'In dev' },
-    { num: '2024', label: 'Founded' },
-    { num: 'SEOUL', label: 'Based in' },
+    { num: '2026', label: 'Founded' },
+    { num: 'PIXEL', label: 'Style' },
   ];
   return (
     <section className="section" style={{ paddingTop: 56, paddingBottom: 56, borderBottom: '1px solid var(--border)' }}>

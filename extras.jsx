@@ -115,8 +115,8 @@ window.ComingNext = ComingNext;
 function AboutSection({ lang }) {
   const t = lang === 'KO' ? {
     eyebrow: '◆ STUDIO · 우리의 신념',
-    quote: ['한 명이 만들어도', '제대로 만든 게임은', '분명히 다르다.'],
-    body: '엘제이게임즈는 1인 인디 스튜디오입니다. 회의보다 코드, 마케팅보다 만듦새. 화려한 연출보다 플레이어가 직접 만드는 즐거움을 앞세웁니다. 우리가 만든 게임을 우리가 가장 오래 플레이합니다.',
+    quote: ['작게 만들어도', '제대로 만든 게임은', '분명히 다르다.'],
+    body: '엘제이게임즈는 작지만 밀도 있게 움직이는 인디 스튜디오입니다. 회의보다 코드, 마케팅보다 만듦새. 화려한 연출보다 플레이어가 직접 만드는 즐거움을 앞세웁니다. 우리가 만든 게임을 우리가 가장 오래 플레이합니다.',
     pillars: [
       { title: '픽셀 한 점까지', body: '도트 한 점, 효과음 한 마디까지 직접 다듬습니다. 빠른 게 아니라 제대로.' },
       { title: '한 판만 더', body: '익숙한 장르 속에서 "한 판만 더"의 깊이를 찾습니다. 시스템이 곧 재미.' },
@@ -124,8 +124,8 @@ function AboutSection({ lang }) {
     ],
   } : {
     eyebrow: '◆ STUDIO · What we believe',
-    quote: ['One person can still', 'make a game that', 'feels properly made.'],
-    body: 'LJ Games is a solo indie studio. Code over meetings, craft over marketing. Player-driven joy ahead of surface spectacle. The games we make are the games we play the longest.',
+    quote: ['Small teams can still', 'make games that', 'feel properly made.'],
+    body: 'LJ Games is a compact indie studio. Code over meetings, craft over marketing. Player-driven joy ahead of surface spectacle. The games we make are the games we play the longest.',
     pillars: [
       { title: 'Down to the pixel', body: 'Every dot, every sound effect — tuned by hand. Not fast. Properly.' },
       { title: 'Just one more run', body: 'We look for depth inside familiar genres. The system is the fun.' },
@@ -282,7 +282,7 @@ function FooterSection({ lang, logoVariant }) {
       { h: '연락', items: ['E-mail', '디스코드'] },
     ],
     copy: '© 2026 엘제이게임즈. 모든 권리 보유.',
-    sub: '서울에서 한 사람이 만듭니다.',
+    sub: '정성껏 다듬은 픽셀 게임을 만듭니다.',
   } : {
     bigQ: 'Let\u2019s build something.',
     bigSub: 'Collaboration, publishing, press — drop us a line. Usual response time is 2 business days.',
@@ -294,7 +294,7 @@ function FooterSection({ lang, logoVariant }) {
       { h: 'Contact', items: ['E-mail', 'Discord'] },
     ],
     copy: '© 2026 LJ Games. All rights reserved.',
-    sub: 'Made by one person in Seoul.',
+    sub: 'Carefully crafted pixel games.',
   };
 
   return (
