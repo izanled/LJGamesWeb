@@ -282,7 +282,7 @@ window.DevlogSection = DevlogSection;
 function FooterSection({ lang, logoVariant }) {
   const hanyangPlayUrl = 'https://play.google.com/store/apps/details?id=net.nekoland.game112222&hl=ko';
   const gemTdPlayUrl = 'https://play.google.com/store/apps/details?id=com.gemtowerdefense&hl=ko';
-  const emailUrl = 'mailto:pungsog.games@gmail.com';
+  const emailUrl = 'mailto:contact@lj-games.com';
   const discordUrl = 'https://discord.com/invite/7ua6Vccs';
   const t = lang === 'KO' ? {
     bigQ: '같이 만들어 볼까요?',
