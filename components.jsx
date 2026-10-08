@@ -88,7 +88,7 @@ function Hero({ lang }) {
 
   const t = lang === 'KO' ? {
     kicker: '엘제이게임즈 · 인디 게임 스튜디오',
-    headline: ['픽셀로 그린 세계,', '오래 머무는 즐거움.'],
+    headline: ['직접 만든 세계,', '오래 머무는 즐거움.'],
     sub: '방치형 RPG부터 타워 디펜스, 그리고 개발 중인 보스 레이드 신작과 웹 게임 플랫폼까지. 시간을 존중하는 한 땀 한 땀 다듬은 게임을 만듭니다.',
     primary: '게임 둘러보기',
     secondary: '스튜디오 이야기 →',
@@ -97,8 +97,8 @@ function Hero({ lang }) {
     chip3: '발바닥 원정대 · 보스 레이드 개발 중',
   } : {
     kicker: 'LJ GAMES · Indie game studio',
-    headline: ['Pixel-crafted worlds,', 'made to be lived in.'],
-    sub: 'From idle RPGs to tower defense, with a boss raid game and a web game platform in the works. Hand-tuned games that respect the player\u2019s time — built one pixel at a time.',
+    headline: ['Hand-made worlds,', 'made to be lived in.'],
+    sub: 'From idle RPGs to tower defense, with a boss raid game and a web game platform in the works. Hand-tuned games that respect the player\u2019s time — built one detail at a time.',
     primary: 'See our games',
     secondary: 'About the studio →',
     chip1: 'Hanyang Online · Open beta',
@@ -255,7 +255,7 @@ window.Sparkles = Sparkles;
 function Marquee({ lang }) {
   const items = lang === 'KO' ? [
     '◆ 인디 게임 스튜디오',
-    '한 땀 한 땀 다듬은 픽셀 아트',
+    '한 땀 한 땀 다듬은 게임 세계',
     '플레이어의 시간을 존중하는 게임',
     '한양 온라인 · 오픈 베타 진행 중',
     'Gem TD · 서비스 중',
@@ -264,7 +264,7 @@ function Marquee({ lang }) {
     '정성껏 다듬은 게임',
   ] : [
     '◆ Indie game studio',
-    'Hand-tuned pixel art',
+    'Hand-tuned game worlds',
     'Games that respect the player\u2019s time',
     'Hanyang Online · Open beta',
     'Gem TD · Live',
