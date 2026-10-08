@@ -89,21 +89,21 @@ function Hero({ lang }) {
   const t = lang === 'KO' ? {
     kicker: '엘제이게임즈 · 인디 게임 스튜디오',
     headline: ['픽셀로 그린 세계,', '오래 머무는 즐거움.'],
-    sub: '방치형 RPG부터 타워 디펜스, 그리고 곧 시작될 캐주얼 게임까지. 시간을 존중하는 한 땀 한 땀 다듬은 게임을 만듭니다.',
+    sub: '방치형 RPG부터 타워 디펜스, 그리고 개발 중인 신작과 웹 게임 플랫폼까지. 시간을 존중하는 한 땀 한 땀 다듬은 게임을 만듭니다.',
     primary: '게임 둘러보기',
     secondary: '스튜디오 이야기 →',
     chip1: '한양 온라인 · 오픈 베타',
     chip2: 'Gem TD · 서비스 중',
-    chip3: '캐주얼 신작 · 2026 예정',
+    chip3: '발바닥 원정대 · 개발 중',
   } : {
     kicker: 'LJ GAMES · Indie game studio',
     headline: ['Pixel-crafted worlds,', 'made to be lived in.'],
-    sub: 'From idle RPGs to tower defense, with a casual title up next. Hand-tuned games that respect the player\u2019s time — built one pixel at a time.',
+    sub: 'From idle RPGs to tower defense, with a new game and a web game platform in the works. Hand-tuned games that respect the player\u2019s time — built one pixel at a time.',
     primary: 'See our games',
     secondary: 'About the studio →',
     chip1: 'Hanyang Online · Open beta',
     chip2: 'Gem TD · Live',
-    chip3: 'Casual title · Coming 2026',
+    chip3: 'Paw Raiders · In development',
   };
 
   return (
@@ -259,7 +259,8 @@ function Marquee({ lang }) {
     '플레이어의 시간을 존중하는 게임',
     '한양 온라인 · 오픈 베타 진행 중',
     'Gem TD · 서비스 중',
-    '캐주얼 신작 · 2026 예정',
+    '발바닥 원정대 · 개발 중',
+    '웹 게임 플랫폼 · 기획 중',
     '정성껏 다듬은 게임',
   ] : [
     '◆ Indie game studio',
@@ -267,7 +268,8 @@ function Marquee({ lang }) {
     'Games that respect the player\u2019s time',
     'Hanyang Online · Open beta',
     'Gem TD · Live',
-    'Casual title coming 2026',
+    'Paw Raiders · In development',
+    'Web game platform · In planning',
     'Carefully crafted games',
   ];
   // duplicate for seamless loop

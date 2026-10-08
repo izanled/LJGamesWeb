@@ -1,104 +1,118 @@
 // LJ Games landing — Coming Next, About / Philosophy, Devlog, Footer
 
 // ────────────────────────────────────────────────────────────────
-// COMING NEXT — casual title teaser
+// COMING NEXT — 개발 중인 신규 프로젝트 (발바닥 원정대, 웹 게임 플랫폼)
 // ────────────────────────────────────────────────────────────────
 function ComingNext({ lang }) {
   const t = lang === 'KO' ? {
     eyebrow: '◆ COMING NEXT',
-    title: '캐주얼 신작 · 작업 중',
-    sub: '한 손으로 즐기는 짧고 깊은 픽셀 게임. 누구나 1분 안에 빠져들고, 한 달 후에도 돌아오게 만드는 그 느낌을 찾고 있어요.',
-    placeholder: '비밀 작업실',
-    tags: ['픽셀 아트', '한 손 조작', '짧고 깊게', '2026 출시'],
+    title: '다음 프로젝트',
+    sub: '지금 만들고 있는 두 가지 이야기입니다.',
+    cards: [
+      {
+        status: '개발 중',
+        color: 'var(--gem-emerald)',
+        name: '발바닥 원정대',
+        sub: 'Paw Raiders',
+        body: '엘제이게임즈의 새로운 게임을 준비하고 있습니다. 자세한 소식은 개발이 진행되는 대로 이곳과 공식 디스코드에서 전해 드리겠습니다.',
+        tags: ['신작 게임', '개발 중'],
+      },
+      {
+        status: '기획 단계',
+        color: 'var(--dc-blue)',
+        name: '웹 게임 플랫폼',
+        sub: 'Web Game Platform',
+        body: '웹 기반 게임에 광고와 결제를 연결해서 제공하는 플랫폼을 개발할 계획입니다. 아직 개념을 정리하는 단계이며, 구체적인 내용은 확정되는 대로 공개하겠습니다.',
+        tags: ['웹 게임', '광고 연동', '결제 연동', '개념 단계'],
+      },
+    ],
   } : {
     eyebrow: '◆ COMING NEXT',
-    title: 'New casual title · in development',
-    sub: 'A short-but-deep pixel game you can play one-handed. The kind that pulls you in within a minute — and pulls you back a month later.',
-    placeholder: 'Secret workshop',
-    tags: ['Pixel art', 'One-hand play', 'Short & deep', '2026 release'],
+    title: 'What’s next',
+    sub: 'Two things we are working on right now.',
+    cards: [
+      {
+        status: 'IN DEVELOPMENT',
+        color: 'var(--gem-emerald)',
+        name: 'Paw Raiders',
+        sub: '발바닥 원정대',
+        body: 'We are preparing a new game from LJ Games. We will share details here and on our Discord as development moves forward.',
+        tags: ['New game', 'In development'],
+      },
+      {
+        status: 'CONCEPT STAGE',
+        color: 'var(--dc-blue)',
+        name: 'Web Game Platform',
+        sub: '웹 게임 플랫폼',
+        body: 'We plan to build a platform that serves web-based games with ads and payments built in. It is still at the concept stage, and we will share specifics once they are settled.',
+        tags: ['Web games', 'Ads', 'Payments', 'Concept'],
+      },
+    ],
   };
 
   return (
     <section className="section hanji-bg" style={{ borderBottom: '1px solid var(--border)' }}>
-      <div className="container coming-grid" style={{
-        display: 'grid',
-        gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 0.9fr)',
-        gap: 48,
-        alignItems: 'center',
-      }}>
-        <div>
-          <div className="kicker" style={{ color: 'var(--gem-emerald)' }}>{t.eyebrow}</div>
-          <h2 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(36px, 4.4vw, 56px)',
-            lineHeight: 1.05,
-            margin: '16px 0 16px',
-            color: 'var(--fg)',
-            letterSpacing: '-0.01em',
-          }}>{t.title}</h2>
-          <p style={{ fontFamily: 'var(--font-ui)', fontSize: 17, lineHeight: 1.6, color: 'var(--fg-muted)', maxWidth: 500, margin: '0 0 24px' }}>{t.sub}</p>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32 }}>
-            {t.tags.map((tag, i) => (
-              <span key={i} className="tag">◇ {tag}</span>
-            ))}
-          </div>
-        </div>
+      <div className="container">
+        <div className="kicker" style={{ color: 'var(--gem-emerald)' }}>{t.eyebrow}</div>
+        <h2 style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(36px, 4.4vw, 56px)',
+          lineHeight: 1.05,
+          margin: '16px 0 12px',
+          color: 'var(--fg)',
+          letterSpacing: '-0.01em',
+        }}>{t.title}</h2>
+        <p style={{ fontFamily: 'var(--font-ui)', fontSize: 17, lineHeight: 1.6, color: 'var(--fg-muted)', margin: '0 0 32px' }}>{t.sub}</p>
 
-        {/* Placeholder mock — pixel "in-progress" frame */}
-        <div className="pixel-card" style={{
-          aspectRatio: '4 / 3',
-          background: 'var(--hanji-100)',
-          position: 'relative',
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          gap: 12,
+        <div className="coming-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+          gap: 32,
         }}>
-          {/* dotted bg */}
-          <div className="dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.6 }}/>
-          {/* TBA label */}
-          <div style={{
-            position: 'relative',
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(48px, 6vw, 88px)',
-            color: 'var(--fg)',
-            letterSpacing: '0.02em',
-          }}>
-            ? ? ?
-          </div>
-          <div style={{
-            position: 'relative',
-            fontFamily: 'var(--font-pixel)',
-            fontSize: 12,
-            letterSpacing: '0.16em',
-            color: 'var(--fg-muted)',
-            textTransform: 'uppercase',
-          }}>◇ {t.placeholder}</div>
-          {/* progress bar */}
-          <div style={{
-            position: 'absolute', bottom: 24, left: 32, right: 32,
-            border: '1px solid var(--border-ink)',
-            background: 'var(--bg)',
-            padding: 3,
-          }}>
-            <div style={{
-              height: 14,
-              width: '38%',
-              background: 'var(--gem-emerald)',
-              boxShadow: 'inset 0 -3px 0 0 #1f7a52',
-            }}/>
-          </div>
-          <div style={{
-            position: 'absolute', bottom: 48, left: 32,
-            fontFamily: 'var(--font-mono)',
-            fontSize: 14,
-            color: 'var(--fg-muted)',
-          }}>{lang === 'KO' ? '진행도 38% · v0.3' : 'PROGRESS 38% · v0.3'}</div>
-          {/* corner pixel sparkles */}
-          <div className="blink" style={{ position: 'absolute', top: 16, right: 18, width: 6, height: 6, background: 'var(--gem-topaz)', border: '1px solid var(--border-ink)' }}/>
-          <div className="blink" style={{ position: 'absolute', top: 24, left: 22, width: 4, height: 4, background: 'var(--dc-red)', border: '1px solid var(--border-ink)', animationDelay: '0.6s' }}/>
+          {t.cards.map((c, i) => (
+            <div key={i} className="pixel-card" style={{
+              background: 'var(--hanji-100)',
+              position: 'relative',
+              overflow: 'hidden',
+              padding: 32,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
+            }}>
+              <div className="dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.35, pointerEvents: 'none' }}/>
+              <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span className="blink" style={{ width: 8, height: 8, background: c.color, border: '1px solid var(--border-ink)' }}/>
+                <span style={{
+                  fontFamily: 'var(--font-pixel)',
+                  fontSize: 12,
+                  letterSpacing: '0.16em',
+                  color: 'var(--fg-muted)',
+                }}>◇ {c.status}</span>
+              </div>
+              <div style={{ position: 'relative' }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(28px, 3vw, 38px)',
+                  lineHeight: 1.1,
+                  margin: 0,
+                  color: 'var(--fg)',
+                }}>{c.name}</h3>
+                <div style={{
+                  fontFamily: 'var(--font-pixel)',
+                  fontSize: 12,
+                  letterSpacing: '0.12em',
+                  color: 'var(--fg-muted)',
+                  marginTop: 6,
+                }}>{c.sub}</div>
+              </div>
+              <p style={{ position: 'relative', fontFamily: 'var(--font-ui)', fontSize: 16, lineHeight: 1.65, color: 'var(--fg-muted)', margin: 0 }}>{c.body}</p>
+              <div style={{ position: 'relative', display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 'auto', paddingTop: 6 }}>
+                {c.tags.map((tag, j) => (
+                  <span key={j} className="tag">◇ {tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -214,7 +228,7 @@ function DevlogSection({ lang }) {
     posts: [
       { date: '2026 · 05 · 12', tag: '패치 1.4', tagColor: 'var(--dc-red)',     title: '한양 온라인 — 보스 레이드 재설계', body: '예고된 패턴, 까다로워진 로테이션, 그리고 레이드 전용 신규 장비. 이번 주 적용 예정.' },
       { date: '2026 · 04 · 28', tag: '개발 일지 011', tagColor: 'var(--dc-blue)', title: 'Gem TD 연구 트리, 312에서 88로', body: '노드를 줄였더니 메타가 더 깊어진 이유. 3주간의 회의, 화이트보드 한 장, 수백 개의 포스트잇.' },
-      { date: '2026 · 04 · 14', tag: '공지', tagColor: 'var(--gem-emerald)',     title: '캐주얼 신작 — 3분기 클로즈드 테스트', body: '다음 분기, 소규모 클로즈드 테스트를 진행합니다. 모든 피드백을 직접 읽기 위해 천천히 시작합니다.' },
+      { date: '2026 · 10 · 09', tag: '공지', tagColor: 'var(--gem-emerald)',     title: '신규 프로젝트 소식 — 발바닥 원정대, 웹 게임 플랫폼', body: '발바닥 원정대를 개발 중이며, 광고와 결제를 연결한 웹 게임 플랫폼도 기획하고 있습니다.' },
     ],
   } : {
     eyebrow: '◆ DEVLOG · Recent posts',
@@ -223,7 +237,7 @@ function DevlogSection({ lang }) {
     posts: [
       { date: '2026 · 05 · 12', tag: 'PATCH 1.4', tagColor: 'var(--dc-red)',     title: 'Hanyang Online — boss raid rework', body: 'Telegraphed patterns, harder rotations, and a new raid-only gear set. Live this week.' },
       { date: '2026 · 04 · 28', tag: 'DEVLOG 011', tagColor: 'var(--dc-blue)',   title: 'Gem TD research tree, 312 → 88', body: 'Why fewer nodes made the meta deeper, not shallower. Three weeks of cuts, one whiteboard, hundreds of sticky notes.' },
-      { date: '2026 · 04 · 14', tag: 'ANNOUNCE', tagColor: 'var(--gem-emerald)', title: 'Casual title — closed test in Q3', body: 'Next quarter, a small closed test. We\u2019re starting slowly so we can read every piece of feedback.' },
+      { date: '2026 · 10 · 09', tag: 'ANNOUNCE', tagColor: 'var(--gem-emerald)', title: 'New projects — Paw Raiders and a web game platform', body: 'Paw Raiders is in development, and we are also planning a web game platform with ads and payments built in.' },
     ],
   };
 
