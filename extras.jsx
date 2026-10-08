@@ -14,8 +14,8 @@ function ComingNext({ lang }) {
         color: 'var(--gem-emerald)',
         name: '발바닥 원정대',
         sub: 'Paw Raiders',
-        body: '엘제이게임즈의 새로운 게임을 준비하고 있습니다. 자세한 소식은 개발이 진행되는 대로 이곳과 공식 디스코드에서 전해 드리겠습니다.',
-        tags: ['신작 게임', '개발 중'],
+        body: '직접 조작해서 보스를 쓰러뜨리는 보스 레이드 게임입니다. 자세한 소식은 개발이 진행되는 대로 이곳과 공식 디스코드에서 전해 드리겠습니다.',
+        tags: ['보스 레이드', '직접 조작', '개발 중'],
       },
       {
         status: '기획 단계',
@@ -36,8 +36,8 @@ function ComingNext({ lang }) {
         color: 'var(--gem-emerald)',
         name: 'Paw Raiders',
         sub: '발바닥 원정대',
-        body: 'We are preparing a new game from LJ Games. We will share details here and on our Discord as development moves forward.',
-        tags: ['New game', 'In development'],
+        body: 'A boss raid game where you take control yourself and bring the bosses down. We will share details here and on our Discord as development moves forward.',
+        tags: ['Boss raid', 'Hands-on control', 'In development'],
       },
       {
         status: 'CONCEPT STAGE',
