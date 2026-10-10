@@ -296,6 +296,8 @@ function FooterSection({ lang, logoVariant }) {
       ] },
       { h: '스튜디오', items: [
         { label: '소개', href: '#studio' },
+        { label: '개인정보처리방침', href: '/privacy/' },
+        { label: '계정·데이터 삭제', href: '/privacy/delete-account.html' },
       ] },
       { h: '연락', items: [
         { label: 'E-mail', href: emailUrl },
@@ -316,6 +318,8 @@ function FooterSection({ lang, logoVariant }) {
       ] },
       { h: 'Studio', items: [
         { label: 'About', href: '#studio' },
+        { label: 'Privacy Policy', href: '/privacy/#en' },
+        { label: 'Account & data deletion', href: '/privacy/delete-account.html#en' },
       ] },
       { h: 'Contact', items: [
         { label: 'E-mail', href: emailUrl },
